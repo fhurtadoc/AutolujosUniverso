@@ -7,8 +7,7 @@ const mysql=require('mysql');
 let {promisify}=require("util");
 //importamos la configuracion de la Base de Datos 
 let localhost=require('../config');
-//ahora hacemos el pool de conecciones
-console.log(localhost);
+
 let pool=mysql.createPool(localhost);
 
 pool.getConnection((err, connection)=>{
