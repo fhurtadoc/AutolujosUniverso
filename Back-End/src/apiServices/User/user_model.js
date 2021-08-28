@@ -43,4 +43,16 @@ User.listar_usuarios=function(done){
         }
     })
 }
+
+User.Buscar_id=function(id, done){
+    dao.buscar(id, done, (err, res)=>{
+        if(err){
+            done(err);            
+        }else{
+            done(res);            
+        }
+    })
+
+    
+}
 module.exports=User;

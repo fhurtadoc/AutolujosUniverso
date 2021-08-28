@@ -19,12 +19,12 @@ module.exports={
         })
     },
 
-    async buscar(where){
-        pool.query(SELECT, where, (err, res)=>{
+    async buscar(id, done){
+        pool.query(SELECT, id, (err, res)=>{
             if(err){
-                return(err, null);
+                done(err);
             }else{
-                return(null, res);
+                done(res);
             }
         })
     },

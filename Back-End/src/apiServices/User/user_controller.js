@@ -3,7 +3,7 @@ const user_dto=require('./user_dto');
 const encrypt = require("../../helpers/encrypt");
 
 module.exports = {
-
+    //CREAR USUARIOS 
     async createUser(req, res, done){                 
         if (!req.body.nom_usuario) return res.sendStatus(400);
         if (!req.body.contrasena) return res.sendStatus(400);
@@ -29,16 +29,34 @@ module.exports = {
         
         
     },
-
+    //LISTAR USUARIOS
     async listUser(req, res){        
         User.listar_usuarios((Users, err)=>{
             if(err) return res.send({menssaje:"error en query", codigo: 404})
             if(Users)return res.send(user_dto.multiple(Users, req.users));
         })
-        
-        
+    },
+    //BUSCAR USUARIOS
+    //BUSCAR UN USUARIO X ID
+    async find_id(req, res)
+    {
+        let id=req.params.id
+        User.Buscar_id(id, (usuario, err)=>{
+            if(err) return res.send({menssaje:"error en query", codigo: 404})            
+            if(usuario)return res.send(user_dto.single(usuario[0]));
+        })
+    },
+    //BUSCAR USUARIO POR PARAMETROS 
+    //pendiente de realizar
 
+    async delete_user(req, res){
+        
     }
+
+
+
+
+
 
 
   
