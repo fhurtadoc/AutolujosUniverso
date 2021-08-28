@@ -11,10 +11,7 @@ const permisos_routes=require('../apiServices/permisos/routes');
  * */
 
 //USUARIOS 
-router.getAsync('/users', user_routes);
-router.getAsync('/atributos', atributos_routes);
-router.getAsync('/perfil', perfil_routes);
-router.getAsync('/permisos', permisos_routes);
+router.get('/users', user_routes);
 
 
 //ARTICULOS

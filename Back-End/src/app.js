@@ -8,7 +8,6 @@ var passport=require('passport');
 
 //import Rutas
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 ///prueba conexion
 var app = express();
