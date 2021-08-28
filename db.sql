@@ -34,10 +34,7 @@ CREATE TABLE perfil (
     id_permisos INT 
 );
 
-CREATE TABLE atributos (
-    id_atributos INT NOT NULL auto_increment PRIMARY KEY, 
-    nom_atributos VARCHAR(100)    
-);
+
 
 CREATE TABLE permisos (
     id_permisos INT NOT NULL auto_increment PRIMARY KEY, 
@@ -104,4 +101,11 @@ CREATE TABLE provedor(
     correo VARCHAR(100)
 );
 
-
+--creacion de usuario adminsitrador
+INSERT
+	INTO
+	usuarios set
+	nom_usuario = 'ADMON',
+	contrasena = '$2a$10$KkvROJYbalmpXTTbBJkoGukmw0HtH/YrzIbPKcQvkrWpZg1VGjOVK', --PASS 12345
+	perfil = 1,
+	correo = 'admon@admon.com'
