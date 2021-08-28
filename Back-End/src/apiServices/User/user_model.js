@@ -7,12 +7,13 @@ class User {
         this.contrasena=password;
         this.perfil=perfil;
         this.correo=email;
+        this.estado=estado;
     }
 
 }
 
-User.crear=function(nuevo_user){
-    res=dao.crear_user(nuevo_user, (err, res)=>{
+User.crear=function(nuevo_user, done){
+    res=dao.crear_user( nuevo_user, done, (err, res)=>{
         if(err){
             return err;    
         }else{
@@ -30,5 +31,16 @@ User.buscarLogin=function(email){
             return res;    
         }
     });    
+}
+
+User.listar_usuarios=function(done){
+    dao.buscarAll(done, (err, res)=>{ 
+        if(err){
+            done(err);            
+        }else{
+            done(res);
+            
+        }
+    })
 }
 module.exports=User;

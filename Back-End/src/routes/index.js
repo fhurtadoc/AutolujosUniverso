@@ -13,7 +13,6 @@ const permisos_routes=require('../apiServices/permisos/routes');
 //USUARIOS 
 router.use('/users', user_routes);
 
-
 //ARTICULOS
 
 
