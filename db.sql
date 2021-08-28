@@ -5,6 +5,8 @@ CREATE USER 'auto_lujos'@'localhost' IDENTIFIED BY '1234';
 
 GRANT ALL PRIVILEGES ON * . * TO 'auto_lujos'@'localhost';
 
+//ALTER USER 'auto_lujos'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+
 FLUSH PRIVILEGES;
 
 SHOW GRANTS FOR 'auto_lujos'@'localhost';

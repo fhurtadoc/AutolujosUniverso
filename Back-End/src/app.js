@@ -1,16 +1,16 @@
-var express = require('express');
-var session=require('express-session');
-var morgan=require('morgan');
-var bodyParser = require('body-parser');
-var passport=require('passport');
+let express = require('express');
+let session=require('express-session');
+let morgan=require('morgan');
+let bodyParser = require('body-parser');
+let passport=require('passport');
 
 
 
 //import Rutas
-var indexRouter = require('./routes/index');
+let indexRouter = require('./routes/index');
 
 ///prueba conexion
-var app = express();
+let app = express();
 
 // 2. Middlewares
 

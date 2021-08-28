@@ -1,5 +1,5 @@
 const single = (resource, authUser) => ({
-    id: resource.id,
+    id: resource.id_usuario,
     username: resource.nom_usuario,
     email: resource.correo,
     perfil:resource.perfil

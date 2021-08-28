@@ -10,11 +10,11 @@ const DELETE=("UPDATE usuarios SET estado=? WHERE id_usuario=?");
 module.exports={
 
     async crear_user(nuevo_user){
-        pool.query(INSERT, nuevo_user, (err, res)=>{
+        pool.query(INSERT, nuevo_user, (err, res)=>{            
             if(err){
-                result(err, null);
+                return(err);
             }else{
-                result(null, res);
+                return(res);
             }
         })
     },
@@ -22,9 +22,9 @@ module.exports={
     async buscar(where){
         pool.query(INSERT, where, (err, res)=>{
             if(err){
-                result(err, null);
+                return(err, null);
             }else{
-                result(null, res);
+                return(null, res);
             }
         })
     },

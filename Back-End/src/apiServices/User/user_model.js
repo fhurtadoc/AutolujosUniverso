@@ -1,11 +1,12 @@
 const dao=require('./user_dao')
 
 class User {
+
     constructor (user_name, password, perfil, email){
-        this.user_name=user_name;
-        this.password=password;
+        this.nom_usuario=user_name;
+        this.contrasena=password;
         this.perfil=perfil;
-        this.email=email;
+        this.correo=email;
     }
 
 }
@@ -30,3 +31,4 @@ User.buscarLogin=function(email){
         }
     });    
 }
+module.exports=User;

@@ -11,7 +11,7 @@ const permisos_routes=require('../apiServices/permisos/routes');
  * */
 
 //USUARIOS 
-router.get('/users', user_routes);
+router.use('/users', user_routes);
 
 
 //ARTICULOS
