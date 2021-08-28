@@ -22,7 +22,8 @@ CREATE TABLE usuarios (
     nom_usuario VARCHAR (100), 
     contrasena VARCHAR(100),
     perfil INt,
-    correo VARCHAR(100)
+    correo VARCHAR(100),
+    estado INT 
 );
 
 CREATE TABLE perfil (
