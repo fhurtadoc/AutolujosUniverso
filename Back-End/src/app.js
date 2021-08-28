@@ -36,7 +36,6 @@ app.use(passport.session());
 
 //3.rutas
 app.use(indexRouter);
-app.use(usersRouter);
 
 
 
