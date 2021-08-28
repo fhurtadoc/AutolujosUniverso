@@ -7,7 +7,7 @@ module.exports = {
     async createUser(req, res, done){                 
         if (!req.body.nom_usuario) return res.sendStatus(400);
         if (!req.body.contrasena) return res.sendStatus(400);
-        if (!req.body.perfil) return res.sendStatus(400);
+        if (!req.body.permisos) return res.sendStatus(400);
         if (!req.body.correo) return res.sendStatus(400);
         if (!req.body.estado) return res.sendStatus(400);        
         //recuperamos las letiables del body
@@ -49,15 +49,15 @@ module.exports = {
     //BUSCAR USUARIO POR PARAMETROS 
     //pendiente de realizar
 
+
+    //ELIMINAR USUARIO 
+
     async delete_user(req, res){
-        
+        let id=req.params.id
+        User.delete(id, (usuario, err)=>{
+            if(err) return res.send({menssaje:"error en query", codigo: 404})            
+            res.sendStatus(204);
+        })
     }
-
-
-
-
-
-
-
   
 }

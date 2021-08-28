@@ -23,23 +23,17 @@ CREATE TABLE usuarios (
     id_usuario INT NOT NULL auto_increment PRIMARY KEY,
     nom_usuario VARCHAR (100), 
     contrasena VARCHAR(100),
-    perfil INt,
+    permisos INt,
     correo VARCHAR(100),
     estado INT 
 );
-
-CREATE TABLE perfil (
-    id_perfil INT NOT NULL auto_increment PRIMARY KEY,
-    name_perfil VARCHAR(100),
-    id_permisos INT 
-);
-
 
 
 CREATE TABLE permisos (
     id_permisos INT NOT NULL auto_increment PRIMARY KEY, 
     nombre_permisos VARCHAR(100),
-    detalle VARCHAR(100)
+    detalle VARCHAR(100),
+    UNIQUE KEY permisos_UN (nombre_permisos)
 );
 
 CREATE TABLE articulos(
@@ -109,3 +103,16 @@ INSERT
 	contrasena = '$2a$10$KkvROJYbalmpXTTbBJkoGukmw0HtH/YrzIbPKcQvkrWpZg1VGjOVK', --PASS 12345
 	perfil = 1,
 	correo = 'admon@admon.com'
+
+
+INSERT INTO autolujos_universo.permisos (nombre_permisos, detalle)  
+VALUES('ADMON', 'administrador del sistema servicios ilimitados');
+
+INSERT INTO autolujos_universo.permisos (nombre_permisos, detalle)  
+VALUES('GERENTE', 'gestion de inventario - registro de ventas -ingreso de productos -solicitud de informes')
+
+INSERT INTO autolujos_universo.permisos (nombre_permisos, detalle)  
+VALUES('ADMINISTRADOR', 'gestion de inventario - registro de ventas -ingreso de productos');
+
+INSERT INTO autolujos_universo.permisos (nombre_permisos, detalle)  
+VALUES('TRABAJADOR', 'registro de ventas');

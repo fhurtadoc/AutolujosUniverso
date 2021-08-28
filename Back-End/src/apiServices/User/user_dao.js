@@ -5,7 +5,7 @@ const LIST=("SELECT * from usuarios");
 const SELECT=("SELECT * from usuarios WHERE id_usuario=?");
 const SELECT_LOGIN=("SELECT * from usuarios WHERE email=?");
 const UPDATE=("UPDATE usuarios SET nom_usuario=?, contrasena=?, perfil=?, correo=? WHERE id_usuario=? ");
-const DELETE=("UPDATE usuarios SET estado=? WHERE id_usuario=?");
+const DELETE=("UPDATE usuarios SET estado=0 WHERE id_usuario=?");
 
 module.exports={
 
@@ -38,5 +38,14 @@ module.exports={
             }
         })
     },
+    async delete(done){
+        pool.query(DELETE, id, (err, res)=>{
+            if(err){
+                done(err);
+            }else{
+                done(res);
+            }
+        })
+    }
 
 }
