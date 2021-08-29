@@ -22,13 +22,12 @@ User.crear=function(nuevo_user, done){
     });    
 }
 
-User.buscarLogin=function(email){
-    where=email;    
-    res=dao.buscar(where,  (err, res)=>{
+User.buscarLogin=function(correo, done){    
+    res=dao.buscar_login(correo,  (err, res)=>{
         if(err){
-            return err;    
+            done(err);     
         }else{
-            return res;    
+            done(res);
         }
     });    
 }

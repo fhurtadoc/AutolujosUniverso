@@ -1,10 +1,5 @@
-const User_abog = require("../modelo/user_abog");
-const User = require("../modelo/user_user");
-const passport = require('passport');
-const encrypt = require("../tools/encrypt");
-const User_user = require("../modelo/user_user");
 const jwt = require('jsonwebtoken');
-
+const controller_user= require('../apiServices/User/user_controller')
 
 /**
  * @author  Fabio Alejandro <fabiohurtadoc@gmail.com>
@@ -14,15 +9,11 @@ const jwt = require('jsonwebtoken');
  * si notan es un callback que tiene un donde al final con la res con un token. 
  * 
 */
-exports.login= async function(req, res, next){
-    passport.authenticate('local.singin', async function(err, User){        
-        if(err) return res.send(err);
-        if(!user_user){
-            return res.status(400).send({message: "el usuario no es" })
-        }else{
-            const token=await jwt.sign({user: user_user}, 'process.env.TOKEN_FORGOT');
-            res.status(200).json({token});            
-        }
-        
-    })(req, res, next);
-};
+module.exports = {
+
+    async login (req, res){        
+        let user=controller_user.login(req, res);
+    }, 
+
+
+};   

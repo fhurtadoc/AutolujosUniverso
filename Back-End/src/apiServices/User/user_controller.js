@@ -1,10 +1,10 @@
 const User=require('./user_model');
 const user_dto=require('./user_dto');
-const encrypt = require("../../helpers/encrypt");
+const encrypt= require('../../helpers/encrypt');
 
 module.exports = {
     //CREAR USUARIOS 
-    async createUser(req, res, done){                 
+    async createUser(req, res){                 
         if (!req.body.nom_usuario) return res.sendStatus(400);
         if (!req.body.contrasena) return res.sendStatus(400);
         if (!req.body.permisos) return res.sendStatus(400);
@@ -46,6 +46,25 @@ module.exports = {
             if(usuario)return res.send(user_dto.single(usuario[0]));
         })
     },
+
+    async login(req, res)
+    {
+        if (!req.body.correo) return res.sendStatus(400);
+        if (!req.body.contrasena) return res.sendStatus(400); 
+        let correo=req.body.correo;        
+        let contrasena=req.body.contrasena;       
+        User.buscarLogin(correo, async (usuario, err)=>{            
+            if(err) return res.send({menssaje:"error en query", codigo: 402});            
+            if(usuario.length<=0) return res.send({menssaje:"el correo no existe", codigo: 402});            
+            let validPassword=await encrypt.matchPassword(contrasena, usuario[0].contrasena);
+            if(!validPassword){
+                return res.send({menssaje: 'contraseña es incorrecta'});
+              }else{        
+                return res.send ({estado:200, usuario:user_dto.single(usuario[0])}); 
+              } 
+        })
+    },
+
     //BUSCAR USUARIO POR PARAMETROS 
     //pendiente de realizar
 

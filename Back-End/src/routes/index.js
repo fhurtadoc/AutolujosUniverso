@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const user_routes=require('../apiServices/User/routes');
-const atributos_routes=require('../apiServices/atributos/routes');
-const perfil_routes=require('../apiServices/perfil/routes');
-const permisos_routes=require('../apiServices/permisos/routes');
-
+const login=require('../services/login')
 /**
  * funcion para traer las rutas por clase ubicadas en la capa de negocios
  * 
  * */
+//LOGIN 
+router.get('/login', login.login);
 
 //USUARIOS 
 router.use('/users', user_routes);
