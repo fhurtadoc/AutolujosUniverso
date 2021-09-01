@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+@font-face{
+    font-family: "RobotoCondensedLight";
+    src: url("./assets/fonts/robotocondensed-light.ttf"), 
+    url("./assets/fonts/robotocondensed-light.eot"), 
+    url("./assets/fonts/robotocondensed-light.woff"), 
+    url("./assets/fonts/robotocondensed-light.woff2"), 
+    url("./assets/fonts/robotocondensed-light.svg");
+}
+@font-face{
+    font-family: "RobotoRegular";
+    src: url("./assets/fonts/roboto-regular.ttf"), 
+    url("./assets/fonts/roboto-regular.eot"), 
+    url("./assets/fonts/roboto-regular.woff"), 
+    url("./assets/fonts/roboto-regular.woff2"), 
+    url("./assets/fonts/roboto-regular.svg");
+}
+@font-face{
+    font-family: "OswaldLight";
+    src: url("./assets/fonts/oswald-light.ttf"), 
+    url("./assets/fonts/oswald-light.eot"), 
+    url("./assets/fonts/oswald-light.woff"), 
+    url("./assets/fonts/oswald-light.woff2"), 
+    url("./assets/fonts/oswald-light.svg");
+}
+*{
+    font-family: "OswaldLight";
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url('./assets/img/239674.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.section{
+    background-color: rgba(255, 255, 255, 0.95);
+    height: 900px;
+    width: 100%;
+    overflow-y: scroll;
+}

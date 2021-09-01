@@ -3,6 +3,7 @@ let session=require('express-session');
 let morgan=require('morgan');
 let bodyParser = require('body-parser');
 let passport=require('passport');
+const cors=require('cors');
 
 
 
@@ -11,6 +12,11 @@ let indexRouter = require('./routes/index');
 
 ///prueba conexion
 let app = express();
+
+
+//1. CORS
+app.use(cors())
+
 
 // 2. Middlewares
 
@@ -35,6 +41,7 @@ app.use(passport.session());
 
 //3.rutas
 app.use(indexRouter);
+
 
 
 

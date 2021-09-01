@@ -1,0 +1,26 @@
+<video autoplay muted loop id="myVideo" #myVideo>
+    <source src="./assets/img/Car - 79065.mp4" type="video/mp4" >
+</video>
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card" id='continerLogin' style="box-shadow: 0 0 27px 0 rgba(84, 84, 84, 0.62);
+        background-color: #cccc;" hidden>
+            <div class="card-header" style="color: white;">
+                Login
+            </div>
+            <div class="card-body">
+                <form >
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="user.correo" name="email" class="form-control" placeholder="Email" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" [(ngModel)]="user.contrasena" name="pass" class="form-control" placeholder="pass" required >
+                    </div>
+                    <button class="btn btn-info" (click)='logIn()'>Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

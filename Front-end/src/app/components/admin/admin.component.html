@@ -1,0 +1,78 @@
+<div>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <h4 style="color: white;">Autolujos Universo</h4> 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto" style="margin-right: 100px;">
+            <li>
+                <p>Notificaciones <a href="#"><img src="../../../assets/img/campana.png" alt="salida" id="imageNav"></a></p>
+            </li>
+            <li>
+                <p>salida <a href="#"><img src="../../../assets/img/salir.png" alt="salida" id="imageNav"></a></p>
+            </li>
+            <li class="nav-item active">
+                <p>USER NAME<img src="../../../assets/img/avatar-male.png" alt="usuario" id="imageNav"></p>                
+            </li> 
+        </ul>      
+        </div>        
+    </nav>    
+    <div class="col-2" style=" background-color: rgba(65, 65, 64, 0.38);" >
+        <div class="col">
+            <div id="imagen">
+                <img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive" id="imagesidevar">
+                <p>Nombre de Usuario</p>
+            </div>                    
+        </div>
+        <div id="menu"> 
+            <div id="menu_container">
+                <div class="col" >
+                    <div class="boton">
+                        <img src="../../../assets/img/home.png" alt="home">
+                        <a [routerLink]="['home']">Home</a>
+                    </div>                            
+                    
+                </div>
+                <div class="col">
+                    <div class="boton">
+                        <img  src="../../../assets/img/productos.png" alt="productos">
+                        <a [routerLink]="['productos']">Productos</a>
+                    </div>
+                    
+                </div>
+                <div class="col">
+                    <div class="boton">
+                        <img  src="../../../assets/img/inventario.png" alt="Inventario">
+                        <a [routerLink]="['inventario']">Inventario</a>
+                    </div>                            
+                </div>
+                <div class="col">
+                    <div class="boton"> 
+                        <img  src="../../../assets/img/carrito.png" alt="Registro">                   
+                        <a [routerLink]="['registro_venta']">Registro Venta</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="boton">
+                        <img src="../../../assets/img/camion.png" alt="Registro">
+                        <a [routerLink]="['provedores']">Provedores</a>
+                    </div>
+                </div> 
+                <div class="col">
+                    <div class="boton">                                               
+                        <img  src="../../../assets/img/clientes.png" alt="Registro">         
+                        <a [routerLink]="['clientes']">Clientes</a>
+                    </div>
+                </div>                                                                                       
+                <div class="col">
+                    <div class="boton">                                                                
+                        <img src="../../../assets/img/ventas.png" alt="Registro">
+                        <a [routerLink]="['informe_ventas']">Infome de Ventas</a>
+                    </div>
+                </div> 
+            </div>                                           
+        </div>                
+    </div>
+    <div class="col-10" id="continer_admin">
+        <router-outlet></router-outlet>
+    </div>
+    
+</div>

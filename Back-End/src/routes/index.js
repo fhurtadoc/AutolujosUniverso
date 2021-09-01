@@ -7,7 +7,7 @@ const login=require('../services/login')
  * 
  * */
 //LOGIN 
-router.get('/login', login.login);
+router.post('/login', login.login);
 
 //USUARIOS 
 router.use('/users', user_routes);
