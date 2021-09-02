@@ -3,3 +3,27 @@
     height: 900px;
     width: 100%;
 }
+.cards-home{
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+}
+.card_home{    
+    margin-top: 5%;
+    margin-left: 5%; 
+    margin-left: 5%;
+    width: 400px;
+    background-color: #073642;
+    color: white;
+
+    
+}
+.img_card_home{
+    width: 40%;
+    margin-left: 10px;
+}
+.cards-home :hover{
+    transform: scale(1.1, 1.1);
+    box-shadow: 5px 5px 5px #073642;
+}

@@ -47,6 +47,8 @@ CREATE TABLE articulos(
     imagen VARCHAR(100),
     estado INT
 );
+ALTER TABLE autolujos_universo.articulos ADD precio_compra int NULL;
+
 CREATE TABLE categoria (
     id_categoria INT NOT NULL  auto_increment PRIMARY KEY,
     nombre VARCHAR(100),

@@ -14,6 +14,12 @@ import { RegistroVentaComponent } from './components/admin/registro-venta/regist
 import { InventarioComponent } from './components/admin/inventario/inventario.component';
 import { ProductosComponent } from './components/admin/productos/productos.component';
 import { HomeComponent } from './components/admin/home/home.component';
+import {MatTableModule} from '@angular/material/table'; 
+
+//MATERIAL
+import {MatCardModule} from '@angular/material/card';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+
 @NgModule({
   declarations: [
     AppComponent,    
@@ -32,7 +38,14 @@ import { HomeComponent } from './components/admin/home/home.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatCardModule
+
+    
+        
+
   ],
   providers: [],
   bootstrap: [AppComponent]

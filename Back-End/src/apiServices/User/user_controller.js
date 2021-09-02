@@ -19,13 +19,11 @@ module.exports = {
         //encriptacion del password
         password_encrypt = await encrypt.encryptPassword(contrasena);
         //creamos un Usuario
-        new_user=new User(nom_usuario, password_encrypt, perfil, correo, estado);        
-        User.crear( nuevo_user,  Usersnew, (err)=>{
+        let new_user=new User(nom_usuario, password_encrypt, perfil, correo, estado);        
+        User.crear( new_user,  done, (new_user,err)=>{
             if(err) return res.send({menssaje:"error en query", codigo: 404})
             if(new_user)return res.send(user_dto.single(Usersnew, req.user));
-        });
-        
-            
+        }); 
         
         
     },
