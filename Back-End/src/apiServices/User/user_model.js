@@ -13,7 +13,7 @@ class User {
 }
 
 User.crear=function(nuevo_user, done){
-    res=dao.crear_user( nuevo_user, done, (err, res)=>{
+    dao.crear_user( nuevo_user, done, (err, res)=>{
         if(err){
             return err;    
         }else{
@@ -23,7 +23,7 @@ User.crear=function(nuevo_user, done){
 }
 
 User.buscarLogin=function(correo, done){    
-    res=dao.buscar_login(correo,  (err, res)=>{
+    dao.buscar_login(correo,  (err, res)=>{
         if(err){
             done(err);     
         }else{

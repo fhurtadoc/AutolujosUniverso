@@ -39,7 +39,7 @@ module.exports={
             }
         })
     }, 
-    async delete(done){
+    async delete(id, done){
         pool.query(DELETE, id, (err, res)=>{
             if(err){
                 done(err);

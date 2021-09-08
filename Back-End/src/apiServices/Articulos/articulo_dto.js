@@ -1,6 +1,6 @@
 var single = (resource, authUser) => ({
     id_articulo: resource.id_articulo,
-    id_categoria: resource.id_categoria,
+    categoria: resource.id_categoria,
     codigo: resource.codigo,
     perfil:resource.perfil,
     nombre:resource.nombre,

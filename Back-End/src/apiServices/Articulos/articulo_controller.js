@@ -1,7 +1,7 @@
 
 const articulo_dto=require('./articulo_dto');
 const Articulo = require('./articulo_model');
-const Categoria=require('');
+const Categoria=require('../Categoria/categoria_model');
 
 
 
@@ -44,6 +44,7 @@ module.exports = {
             
         })
     }, 
+    
 
 
 
