@@ -7,7 +7,7 @@ const user_routes=require('../apiServices/User/routes');
 //ARTICULOS 
 const articulo=require('../apiServices/Articulos/routes');
 //CATEGORIAS
-const categoria=require('../apiServices/Categoria/routes');
+const categoria=require('../apiServices/Categoria/router');
 /**
  * @description este modulo permite lanzar las rutas desde index a cada uno de los modulos 
  * @author Fabio Alejandro Hurtado Castillo  

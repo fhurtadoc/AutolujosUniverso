@@ -10,11 +10,11 @@ module.exports = {
         let descripcion=req.body.descripcion;
         let estado=req.body.estado; 
         let new_categoria=new Categoria(nombre, descripcion, estado);
-        Categoria.crear(new_categoria, done, (new_categoria, err)=>{
+        Categoria.crear(new_categoria, (new_categoria, err)=>{
             if(err) return res.send({menssaje:"error en query", codigo: 404})
             if(new_categoria){
-                categotia_dto.single(new_categoria, req.categoria)
-                return res.send(articulo_dto);
+                categoria_dto.single(new_categoria, req.categoria)
+                return res.send(categoria_dto);
             }
         });
     },
@@ -29,16 +29,16 @@ module.exports = {
     async buscar(req, res){
         let id=req.params.id;
         Categoria.buscar(id, (categoria, err)=>{
-            if(err) return res.send({menssaje:"error en query", codigo: 404})
-            if(categoria)return res.send(categoria_dto.single(categoria, req.categoria));
+            if(err) return res.send({menssaje:"error en query", codigo: 404})                        
+            if(categoria)return res.send(categoria_dto.single(categoria[0], req.categoria));
         })
     },
 
     async delete(req, res){
         let id=req.params.id
-        Categoria.delete( id, (res, err)=>{
+        Categoria.delete( id, (response, err)=>{
             if(err) return res.send({menssaje:"error en query", codigo: 404})
-            if(res)return res.sendStatus(200);
+            if(res)return res.send({codigo:200});
         })
     }
 }

@@ -1,11 +1,10 @@
 const pool=require('../../services/conexionMYSQL');
 
-const INSERT=('INSERT INTO usuarios set ?');
-const LIST=("SELECT * from usuarios");
-const SELECT=("SELECT * from usuarios WHERE id_usuario=?");
-const SELECT_LOGIN=("SELECT * from usuarios WHERE correo=?");
-const UPDATE=("UPDATE usuarios SET nom_usuario=?, contrasena=?, perfil=?, correo=? WHERE id_usuario=? ");
-const DELETE=("UPDATE usuarios SET estado=0 WHERE id_usuario=?");
+const INSERT=('INSERT INTO categoria set ?');
+const LIST=("SELECT * from categoria");
+const SELECT=("SELECT * from categoria WHERE id_categoria=?");
+const UPDATE=("");
+const DELETE=("UPDATE categoria SET estado=0 WHERE estado=?");
 
 module.exports={
 
@@ -22,9 +21,9 @@ module.exports={
     async buscar(id, done){
         pool.query(SELECT, id, (err, res)=>{
             if(err){
-                done(err);
+                done(err);                
             }else{
-                done(res);
+                done(res);                
             }
         })
     },

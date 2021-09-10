@@ -45,7 +45,29 @@ module.exports = {
         })
     }, 
     
+    async listar_articulos(req, res){
+        Articulo.listar_articulos((articulos, err)=>{
+            if(err) return res.send({menssaje:"error en query", codigo: 404})
+            if(articulos)return res.send(articulo_dto.multiple(articulos, req.articulos));            
+        })
+    },
 
+    async buscar(req, res){
+        let id=req.params.id;
+        Articulo.Buscar_id(id, (articulo ,err)=>{
+            if(err) return res.send({menssaje:"error en query", codigo: 404})
+            if(articulo)return res.send(articulo_dto.single(articulo, req.articulo));            
+        })
+    },
+
+    async delete(req, res){
+        let id=req.params.id;
+        Articulo.delete(id, (res, err)=>{
+            if(err) return res.send({menssaje:"error en query", codigo: 404})
+            if(res)return res.sendStatus(200);
+        })
+
+    },
 
 
 }
