@@ -16,7 +16,7 @@ class Articulo {
 }
 
 Articulo.crear=function(newArticulo, done){
-    res=dao.crear_articulo( newArticulo, done, (err, res)=>{
+    res=dao.crear_articulo( newArticulo, done, (res, err )=>{
         if(err){
             return err;    
         }else{

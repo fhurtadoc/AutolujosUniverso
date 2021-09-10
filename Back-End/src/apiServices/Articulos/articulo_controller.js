@@ -29,17 +29,16 @@ module.exports = {
         let precio_compra=req.body.precio_compra;
 
         let new_articulo=new Articulo(id_categoria, codigo, nombre, precio_venta, stock, descripcion, imagen,  estado,  precio_compra );
-        Articulo.crear(new_articulo, done, (new_articulo, err)=>{
-            if(err) return res.send({menssaje:"error en query", codigo: 404})
-            if(new_articulo){
-                let id_categoria=new_user.id_categoria
-                let nom_categoria="";
-                Categoria.buscar(id_categoria, done, (categoria, err)=>{
-                    nom_categoria=categoria.nombre;
+        Articulo.crear(new_articulo, ( new_articulo_data, err)=>{                     
+            if(err) return res.send({menssaje:"error en query", codigo: 404})            
+            if(new_articulo_data){                
+                let id_categoria=new_articulo.id_categoria                
+                Categoria.buscar(id_categoria, (categoria, err)=>{                    
+                    let nom_categoria=categoria[0].nombre;                    
+                    new_articulo.id_categoria=nom_categoria;                                                             
+                    return res.send(articulo_dto.single(new_articulo, req.new_articulo));
                 });
-                Usersnew.id_categoria=nom_categoria;                 
-                articulo_dto.single(Usersnew, req.user)
-                return res.send(articulo_dto);
+                
             }
             
         })

@@ -12,16 +12,16 @@ const DELETE=("UPDATE articulos SET estado=0 WHERE id_articulo=?");
 module.exports={
     async crear_articulo(new_articulo, done){
         pool.query(INSERT, new_articulo, (err, res)=>{
-            if(err){
+            if(err){                                
                 done(err);
-            }else{
+            }else{                
                 done(res);
             }
         })
     },
 
-    async buscarAll(){
-        pool.query(LIST, new_articulo, (err, res)=>{
+    async buscarAll(done){
+        pool.query(LIST, (err, res)=>{
             if(err){
                 done(err);
             }else{
