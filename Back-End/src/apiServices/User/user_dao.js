@@ -13,7 +13,7 @@ module.exports={
         pool.query(INSERT, nuevo_user, (err, res)=>{            
             if(err){
                 done(err);
-            }else{
+            }else{                
                 done(res);
             }
         })

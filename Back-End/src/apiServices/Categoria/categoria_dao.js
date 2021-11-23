@@ -8,8 +8,8 @@ const DELETE=("UPDATE categoria SET estado=0 WHERE estado=?");
 
 module.exports={
 
-    async crear_categoria(nuevo_user, done){
-        pool.query(INSERT, nuevo_user, (err, res)=>{            
+    async crear_categoria(nueva_categoria, done){
+        pool.query(INSERT, nueva_categoria, (err, res)=>{            
             if(err){
                 done(err);
             }else{

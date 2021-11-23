@@ -10,11 +10,11 @@ module.exports = {
         let descripcion=req.body.descripcion;
         let estado=req.body.estado; 
         let new_categoria=new Categoria(nombre, descripcion, estado);
-        Categoria.crear(new_categoria, (new_categoria, err)=>{
+        Categoria.crear(new_categoria, (new_categoria_res, err)=>{
             if(err) return res.send({menssaje:"error en query", codigo: 404})
-            if(new_categoria){
-                categoria_dto.single(new_categoria, req.categoria)
-                return res.send(categoria_dto);
+            if(new_categoria_res.insertId){
+                new_categoria.id_categoria=new_categoria_res.insertId;                
+                return res.send(categoria_dto.single(new_categoria, req.new_categoria ));
             }
         });
     },
