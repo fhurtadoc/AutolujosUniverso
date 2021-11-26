@@ -15,6 +15,7 @@ import { InventarioComponent } from './components/admin/inventario/inventario.co
 import { ProductosComponent } from './components/admin/productos/productos.component';
 import { HomeComponent } from './components/admin/home/home.component';
 import {MatTableModule} from '@angular/material/table'; 
+import {MatButtonModule} from '@angular/material/button'; 
 
 //MATERIAL
 import {MatCardModule} from '@angular/material/card';
@@ -40,12 +41,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatCardModule,
-    MatCardModule
-
-    
-        
-
+    MatCardModule,    
+    MatTableModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

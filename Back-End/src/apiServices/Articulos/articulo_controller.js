@@ -27,21 +27,27 @@ module.exports = {
         let imagen=req.body.imagen;
         let estado=req.body.estado;
         let precio_compra=req.body.precio_compra;
-
-        let new_articulo=new Articulo(id_categoria, codigo, nombre, precio_venta, stock, descripcion, imagen,  estado,  precio_compra );
-        Articulo.crear(new_articulo, ( new_articulo_data, err)=>{                     
+        //Validar si el Articulo ya Existe
+        Articulo.BuscarCodigo(codigo, (articulo ,err)=>{
             if(err) return res.send({menssaje:"error en query", codigo: 404})            
-            if(new_articulo_data){                
+            if(articulo.length!=0){
+                return res.send({menssaje:"El articulo ya existe", codigo: 400})
+            }else{
+                let new_articulo=new Articulo(id_categoria, codigo, nombre, precio_venta, stock, descripcion, imagen,  estado,  precio_compra );
+                Articulo.crear(new_articulo, ( new_articulo_data, err)=>{                     
+                if(err) return res.send({menssaje:"error en query", codigo: 404})            
+                if(new_articulo_data){                
                 let id_categoria=new_articulo.id_categoria                
-                Categoria.buscar(id_categoria, (categoria, err)=>{                    
-                    let nom_categoria=categoria[0].nombre;                    
-                    new_articulo.id_categoria=nom_categoria;                                                             
-                    return res.send(articulo_dto.single(new_articulo, req.new_articulo));
-                });
-                
+                    Categoria.buscar(id_categoria, (categoria, err)=>{                    
+                        let nom_categoria=categoria[0].nombre;                    
+                        new_articulo.id_categoria=nom_categoria;                                                             
+                        return res.send(articulo_dto.single(new_articulo, req.new_articulo));
+                    });                
             }
             
         })
+            }            
+        });        
     }, 
     
     async listar_articulos(req, res){
@@ -56,6 +62,13 @@ module.exports = {
         Articulo.Buscar_id(id, (articulo ,err)=>{
             if(err) return res.send({menssaje:"error en query", codigo: 404})
             if(articulo)return res.send(articulo_dto.single(articulo, req.articulo));            
+        })
+    },
+
+    async buscarforCodigoAsync(codigo){        
+        Articulo.BuscarCodigo(codigo, (articulo ,err)=>{
+            if(err) return res.send({menssaje:"error en query", codigo: 404})
+            if(articulo)return res.send(articulo_dto.single(articulo, req.articulo));
         })
     },
 

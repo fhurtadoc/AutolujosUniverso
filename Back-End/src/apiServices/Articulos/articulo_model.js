@@ -56,4 +56,26 @@ Articulo.delete=function(id, done){
     }) 
 }
 
+Articulo.BuscarCodigo=function(codigo, done){
+    dao.buscar_codigo(codigo, done, (err, res)=>{
+        if(err){
+            done(err);            
+        }else{
+            done(res);            
+        }
+    })
+},
+
+Articulo.BuscarCodAsync=function(codigo, done){
+    dao.buscar_async(codigo, done, (err, res)=>{
+        if(err){
+            done(err);            
+        }else{
+            done(res);            
+        }
+    })
+}
+
+
+
 module.exports=Articulo;

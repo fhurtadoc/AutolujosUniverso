@@ -1,0 +1,14 @@
+table {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+  
+  #titulo{
+    font-size: 50px;
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  

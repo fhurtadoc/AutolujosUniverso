@@ -1,17 +1,17 @@
 /*
 Solo para distribuciones linux es necesario crear usuario 
 
-CREATE USER 'auto_lujos'@'localhost' IDENTIFIED BY '1234';
+CREATE USER 'alejo'@'localhost' IDENTIFIED BY '1234';
 
-GRANT ALL PRIVILEGES ON * . * TO 'auto_lujos'@'localhost';
+GRANT ALL PRIVILEGES ON * . * TO 'alejo'@'localhost';
 
-//ALTER USER 'auto_lujos'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+//ALTER USER 'alejo'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
 
 FLUSH PRIVILEGES;
 
-SHOW GRANTS FOR 'auto_lujos'@'localhost';
+SHOW GRANTS FOR 'alejo'@'localhost';
 
-sudo mysql -u auto_lujos -p
+sudo mysql -u alejo -p
 
 */
 
@@ -48,6 +48,8 @@ CREATE TABLE articulos(
     estado INT
 );
 ALTER TABLE autolujos_universo.articulos ADD precio_compra int NULL;
+ALTER TABLE autolujos_universo.articulos ADD CONSTRAINT articulos_UN UNIQUE KEY (codigo);
+
 
 CREATE TABLE categoria (
     id_categoria INT NOT NULL  auto_increment PRIMARY KEY,

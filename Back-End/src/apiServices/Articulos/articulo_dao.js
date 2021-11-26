@@ -47,5 +47,25 @@ module.exports={
                 done(res);
             }
         })
+    },
+
+    async buscar_codigo(codigo, done){
+        pool.query(SELECT_CODIGO, codigo,(err, res)=>{
+            if(err){
+                done(err);
+            }else{
+                done(res);
+            }
+        })
+    },
+
+    async buscar_async(codigo, done){
+        pool.query("SELECT * from articulos WHERE codigo=%?%", codigo,(err, res)=>{
+            if(err){
+                done(err);
+            }else{
+                done(res);
+            }
+        })
     }
 }
