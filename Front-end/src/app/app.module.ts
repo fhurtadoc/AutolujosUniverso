@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,12 +13,20 @@ import { RegistroVentaComponent } from './components/admin/registro-venta/regist
 import { InventarioComponent } from './components/admin/inventario/inventario.component';
 import { ProductosComponent } from './components/admin/productos/productos.component';
 import { HomeComponent } from './components/admin/home/home.component';
-import {MatTableModule} from '@angular/material/table'; 
-import {MatButtonModule} from '@angular/material/button'; 
+import { DialogNewproductComponent } from './components/admin/productos/dialog-newproduct/dialog-newproduct.component'; 
+
+
 
 //MATERIAL
+import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatCardModule} from '@angular/material/card';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import {MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input'; 
+import {MatTableModule} from '@angular/material/table'; 
+import {MatButtonModule} from '@angular/material/button'; 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select'; 
 
 @NgModule({
   declarations: [
@@ -32,8 +39,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegistroVentaComponent,
     InventarioComponent,
     ProductosComponent,
-    HomeComponent
-    
+    HomeComponent,
+    DialogNewproductComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatCardModule,    
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

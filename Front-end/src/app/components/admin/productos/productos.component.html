@@ -2,13 +2,10 @@
     <div id="titulo">
          <p>Lista de Productos</p>    
     </div> 
-    <form class="example-form">
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>First name</mat-label>
-            <input matInput>
-        </mat-form-field>
-    </form>
-   
+    
+
+    <button mat-raised-button (click)="openDialog()">Crear Nuevo Producto</button>
+        
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
