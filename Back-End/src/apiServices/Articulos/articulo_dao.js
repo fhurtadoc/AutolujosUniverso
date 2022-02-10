@@ -7,14 +7,16 @@ const LIST=("SELECT * from articulos");
 const SELECT=("SELECT * from articulos WHERE id_articulo=?");
 const SELECT_CODIGO=("SELECT * from articulos WHERE codigo=?");
 const UPDATE=("UPDATE articulos SET id_categoria=?, codigo=?, nombre=?, precio_venta=?, stock=?, descripcion=?, imagen=?,  estado=? WHERE id_usuario=? ");
-const DELETE=("UPDATE articulos SET estado=0 WHERE id_articulo=?");
+const DELETE=("DELETE FROM articulos WHERE id_articulo=?");
 
 module.exports={
     async crear_articulo(new_articulo, done){
         pool.query(INSERT, new_articulo, (err, res)=>{
-            if(err){                                
+            if(err){ 
+                console.log(err);                               
                 done(err);
             }else{                
+                console.log(res);                               
                 done(res);
             }
         })
@@ -42,6 +44,7 @@ module.exports={
     async delete(id, done){
         pool.query(DELETE, id, (err, res)=>{
             if(err){
+                console.log(err);
                 done(err);
             }else{
                 done(res);

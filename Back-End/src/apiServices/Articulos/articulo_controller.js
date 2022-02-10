@@ -8,6 +8,7 @@ const Categoria=require('../Categoria/categoria_model');
 module.exports = {
 
     async crear_articulo(req, res){
+        
         if (!req.body.id_categoria) return res.sendStatus(400);
         if (!req.body.codigo) return res.sendStatus(400);
         if (!req.body.nombre) return res.sendStatus(400);
@@ -74,12 +75,14 @@ module.exports = {
 
     async delete(req, res){
         let id=req.params.id;
-        Articulo.delete(id, (res, err)=>{
+        console.log(id);
+        Articulo.delete(id, (res_data, err)=>{            
             if(err) return res.send({menssaje:"error en query", codigo: 404})
-            if(res)return res.sendStatus(200);
+            if(res)return res.send( {menssaje: "Eliminado Correctamente", codigo:200});
         })
 
-    },
+    }
+     
 
 
 }

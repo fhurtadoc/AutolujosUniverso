@@ -48,9 +48,9 @@ Articulo.Buscar_id=function(id, done){
 }
 Articulo.delete=function(id, done){
     dao.delete(id, done, (err, res)=>{
-        if(err){
+        if(err){            
             done(err);            
-        }else{
+        }else{            
             done(res);            
         }
     }) 

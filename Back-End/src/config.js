@@ -1,7 +1,7 @@
 let localhost={
     host:'localhost',
-    user: 'auto_lujos',
-    password:'1234',
+    user: 'codigodeplaton',
+    password:'12345',
     database:'autolujos_universo',
     port:'3306'    
 }

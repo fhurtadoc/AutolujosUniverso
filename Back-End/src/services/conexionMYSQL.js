@@ -11,7 +11,14 @@ let localhost=require('../config');
 let pool=mysql.createPool(localhost);
 
 pool.getConnection((err, connection)=>{
-    if(err){
+    if(err){ 
+
+        
+              
+        if (err.code==='ER_NOT_SUPPORTED_AUTH_MODE' || err.code==='ER_ACCESS_DENIED_ERROR' ){
+            console.log('conexion a la DB genera error revise contraseñas y usuarios');
+        }
+
         if(err.code === 'PROTOCOL_CONNECTION_LOST'){
             console.log('conexion a DB esta cerrada');
         }
@@ -22,10 +29,10 @@ pool.getConnection((err, connection)=>{
             console.log('Database consulta rechazada');
         }
     }
-    if(connection){
+    if(connection){        
         connection.release();
+        
     }
-    console.log('conectado a DB');
     return
 });
 

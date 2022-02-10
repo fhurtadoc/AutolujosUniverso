@@ -2,7 +2,7 @@ const dao=require('./user_dao')
 
 class User {
 
-    constructor (user_name, password, perfil, email){
+    constructor (user_name, password, permisos, email, estado){
         this.nom_usuario=user_name;
         this.contrasena=password;
         this.permisos=permisos;
@@ -61,6 +61,16 @@ User.delete=function(id, done){
             done(res);            
         }
     }) 
+}
+
+User.edit_pass=function(id, password, done ){
+    dao.edit_pass(id, password, done, (err, res)=>{
+        if(err){
+            done(err);            
+        }else{
+            done(res);            
+        }
+    })
 }
 
 module.exports=User;
