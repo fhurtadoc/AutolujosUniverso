@@ -30,5 +30,6 @@ export class DialogNewproductComponent  {
   onNoClick(): void {
     this.dialogRef.close();
   }
+  
 
 }

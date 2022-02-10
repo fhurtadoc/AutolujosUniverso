@@ -1,0 +1,14 @@
+#visible {
+   visibility: hidden; 
+   opacity: 0;
+   height: 0;
+   padding: 0;
+}
+
+#invisible{
+    visibility: visible; 
+    opacity: 1;
+    height: auto;
+    padding: 15px 0px;
+    transition: opacity 2s linear;
+}

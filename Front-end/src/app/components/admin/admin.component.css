@@ -9,18 +9,22 @@ ul li{
     margin-left: 10px;
 }
 #imagen{
+    display: flex;
     width: 40%;
 	height: auto;
-    margin-left: 25%;
+    margin-top: 10%;
+    margin-left: 25%;    
+    flex-direction: column;       
 }
 #imagesidevar{
     height: 100px;
     width: 100px;
     margin-right: 50%;
 }
-#imagen p{    
-    margin-left: 25%;
-    margin-top: 10%; 
+#imagen p{ 
+    margin-top: 20%;       
+    text-align: center;
+    justify-content:flex-end; 
 }
 #menu{
     text-align: center;

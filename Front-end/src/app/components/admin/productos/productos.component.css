@@ -12,3 +12,9 @@ table {
     justify-content: center;
   }
   
+  #div_alert{
+    color: #8d9998 !important;
+    background-color: #ffffcc;   
+    padding: 16px; 
+    width: 25%;    
+  }

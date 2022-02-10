@@ -7,10 +7,10 @@
                 <p>Notificaciones <a href="#"><img src="../../../assets/img/campana.png" alt="salida" id="imageNav"></a></p>
             </li>
             <li>
-                <p>salida <a href="#"><img src="../../../assets/img/salir.png" alt="salida" id="imageNav"></a></p>
+                <p>salida <a (click)="salir()" [routerLink]="['/login']" ><img src="../../../assets/img/salir.png" alt="salida" id="imageNav"></a></p>
             </li>
             <li class="nav-item active">
-                <p>USER NAME<img src="../../../assets/img/avatar-male.png" alt="usuario" id="imageNav"></p>                
+                <p> {{userName}} <img src="../../../assets/img/avatar-male.png" alt="usuario" id="imageNav"></p>                
             </li> 
         </ul>      
         </div>        
@@ -19,7 +19,7 @@
         <div class="col">
             <div id="imagen">
                 <img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive" id="imagesidevar">
-                <p>Nombre de Usuario</p>
+                <p>{{userName}}</p>
             </div>                    
         </div>
         <div id="menu"> 
@@ -66,6 +66,13 @@
                     <div class="boton">                                                                
                         <img src="../../../assets/img/ventas.png" alt="Registro">
                         <a [routerLink]="['informe_ventas']">Infome de Ventas</a>
+                    </div>
+                </div> 
+                <div class="col" *ngIf="level_acces"
+                [style.visibility]="level_acces!='1' ? 'hidden' : 'visible' ">
+                    <div class="boton">                                                                
+                        <img src="../../../assets/img/usuarios.png" alt="Registro">
+                        <a (click)="create_user()"> Crear Usuarios</a>
                     </div>
                 </div> 
             </div>                                           

@@ -1,0 +1,43 @@
+    <div mat-dialog-content>
+        <p>Crear Nuevo Usuarios</p>  
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre de Usuario</mat-label>
+            <input matInput [(ngModel)]="data_usua.nom_usuario" placeholder="nom_usuario">
+        </mat-form-field>       
+        <mat-form-field appearance="fill">
+            <mat-label>Permisos</mat-label>
+            <mat-select name="permisos" [(ngModel)]="data_usua.id_permisos" >
+                <mat-option *ngFor="let permiso of permisos" [value]="permiso.id_permisos" >{{permiso.nombre_permisos}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Correo</mat-label>
+            <input matInput [(ngModel)]="data_usua.correo" placeholder="correo">
+        </mat-form-field>        
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button  color="warn">Cancelar</button>  
+        <button mat-button cdkFocusInitial [mat-dialog-close]="data_usua">Crear Usuario</button>
+    </div>    
+
+    <!--_________________________________________________________________-->
+    <div style="margin-top: 10%;">
+        <h2>Buscar Usuario</h2>
+        <mat-form-field appearance="fill">
+            <mat-label>Buscar</mat-label>
+            <input matInput  [(ngModel)]=find_word (keypress)="find_user()" placeholder="Buscar">
+        </mat-form-field> 
+        <table class="table">
+            <tr *ngFor="let user of users;">
+                <td>  <mat-label>USUARIO:</mat-label> {{user.username}}</td>
+                <td> <mat-label>EMAIL:</mat-label>  {{user.email}}</td>
+                <td>
+                    <mat-label>PERMISOS:</mat-label> 
+                    <mat-select name="permisos" [(ngModel)]="data_usua.id_permisos" >
+                        <mat-option *ngFor="let permiso of permisos"  [value]="permiso.id_permisos" >{{permiso.nombre_permisos}}</mat-option>
+                    </mat-select>
+                </td>
+            </tr>
+        </table>        
+    </div>
+    

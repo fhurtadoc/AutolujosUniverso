@@ -5,6 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
+import { dialog_createUser } from './components/admin/admin.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { InfoVentasComponent } from './components/admin/info-ventas/info-ventas.component';
 import { ClientesComponent } from './components/admin/clientes/clientes.component';
@@ -17,6 +18,7 @@ import { DialogNewproductComponent } from './components/admin/productos/dialog-n
 
 
 
+
 //MATERIAL
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatCardModule} from '@angular/material/card';
@@ -26,10 +28,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table'; 
 import {MatButtonModule} from '@angular/material/button'; 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatSelectModule} from '@angular/material/select'; 
+import {MatSelectModule} from '@angular/material/select';
+import { NewLoginComponent } from './login/new-login/new-login.component';
+import { AlertClassComponent } from './tools/alert-class/alert-class.component'; 
 
 @NgModule({
   declarations: [
+    dialog_createUser,
     AppComponent,    
     LoginComponent,
     AdminComponent,
@@ -40,7 +45,9 @@ import {MatSelectModule} from '@angular/material/select';
     InventarioComponent,
     ProductosComponent,
     HomeComponent,
-    DialogNewproductComponent
+    DialogNewproductComponent,
+    NewLoginComponent,
+    AlertClassComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +65,6 @@ import {MatSelectModule} from '@angular/material/select';
     MatSelectModule    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, ProductosComponent, dialog_createUser ]
 })
 export class AppModule { }

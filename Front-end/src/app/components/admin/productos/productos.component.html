@@ -2,11 +2,17 @@
     <div id="titulo">
          <p>Lista de Productos</p>    
     </div> 
+    <button mat-raised-button (click)="openDialog()" style="width:15%" >Crear Nuevo Producto</button>    
     
-
-    <button mat-raised-button (click)="openDialog()">Crear Nuevo Producto</button>
+    <div  #alert_div id="div_alert" style="width:15%;" [@hidden]="state"> 
+        <span>!ADVERTENCIA</span>
+        <ol style="list-style: none;">
+            <li *ngFor="let error_alert of alerta">{{error_alert}}</li>            
+        </ol>
+                      
+    </div>
         
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
 
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -61,11 +67,16 @@
             <th mat-header-cell *matHeaderCellDef> Precio De Compra </th>
             <td mat-cell *matCellDef="let element"> {{element.precio_compra}} </td>
         </ng-container>
-        
+        <ng-container matColumnDef="Eliminar">
+            <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+            <td mat-cell *matCellDef="let element"> <a [routerLink]="" (click)="delete(element.id_articulo)">Eliminar</a> </td>
+        </ng-container>
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    
+        <tr mat-row          
+        *matRowDef="let row; columns: displayedColumns;" ></tr>
     </table>
+
 
 
 </div>

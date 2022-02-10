@@ -1,10 +1,55 @@
 <div mat-dialog-content>
   <p>Crear Nuevo Producto</p>  
   <mat-form-field appearance="fill">
-    <mat-label>Favorite Animal</mat-label>
+    <mat-label>Codigo</mat-label>
+    <input matInput [(ngModel)]="data.codigo" placeholder="codigo">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
     <input matInput [(ngModel)]="data.nombre" placeholder="nombre">
   </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Precio de Venta</mat-label>
+    <input matInput [(ngModel)]="data.precio_venta" placeholder="Precio de Venta">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Stock</mat-label>
+    <input matInput [(ngModel)]="data.stock" placeholder="stock">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Descripcion</mat-label>
+    <input matInput [(ngModel)]="data.descripcion" placeholder="descripcion">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>imagen</mat-label>
+    <input matInput [(ngModel)]="data.imagen" placeholder="imagen">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Estado</mat-label>
+    <input matInput [(ngModel)]="data.estado" placeholder="estado">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Precio de Compra</mat-label>
+    <input matInput [(ngModel)]="data.precio_compra" placeholder="precio_compra">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Categoria</mat-label>
+    <select matNativeControl required [(ngModel)]="data.id_categoria">
+      <option value=1>Carro</option>
+      <option value=2>Moto</option>      
+    </select>
+  </mat-form-field>
+
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Cancelar</button>  
+  <button mat-button (click)="onNoClick()" color="warn">Cancelar</button>  
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Crear</button>
 </div>

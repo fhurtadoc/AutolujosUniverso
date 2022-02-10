@@ -1,0 +1,18 @@
+#form{
+    width: 50%;
+    height: 600px;
+    display: flex;        
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+    background-color: rgba(255, 255, 255, 0.69);
+    flex-direction:column;
+    justify-content: center;
+    color: aliceblue;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.field {
+    margin-right: 5%;
+}

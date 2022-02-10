@@ -1,0 +1,13 @@
+<div id="form">
+    <mat-form-field appearance="fill">
+        <mat-label>Crear Contraseña</mat-label>
+        <input matInput placeholder="Contraseña"  [type]="'password'"  [(ngModel)]="password">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Conformar Contraseña</mat-label>
+        <input matInput placeholder="Confirmar Contraseña" [type]="'password'" [(ngModel)]="password_confirm">
+    </mat-form-field>
+    <button mat-button (click)="edit_pass()" color="warn">Actualizar Contraseña</button>  
+</div>
+
+

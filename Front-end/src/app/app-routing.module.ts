@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from './components/login/login.component';
+import { NewLoginComponent } from './login/new-login/new-login.component';
 import{AdminComponent} from './components/admin/admin.component';
 import {HomeComponent} from './components/admin/home/home.component';
 import {ClientesComponent} from './components/admin/clientes/clientes.component';
@@ -10,6 +11,7 @@ import {ProductosComponent} from './components/admin/productos/productos.compone
 import {ProvedoresComponent} from './components/admin/provedores/provedores.component';
 import {RegistroVentaComponent} from './components/admin/registro-venta/registro-venta.component';
 
+
 const routes: Routes = [
   {
     path:'',
@@ -18,7 +20,10 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,        
+  },
+  {    
+    path: 'New', component:NewLoginComponent    
   },
   {
     path: 'admin',
@@ -33,6 +38,7 @@ const routes: Routes = [
       {path: 'informe_ventas', component: InfoVentasComponent,}      
     ]
   }
+  
 ];
 
 @NgModule({
